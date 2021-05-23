@@ -1,4 +1,4 @@
-# CSS Archicture
+# CSS Architecture
 Blog project based on Alura Course.
 Made with:
 - HTML
