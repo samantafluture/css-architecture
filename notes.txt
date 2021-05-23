@@ -1,0 +1,86 @@
+# metodologia
+- atomic design
+
+# pastas
+
+## assets
+- arquivos estáticos
+    . css
+        - arquivos de estilo (css)
+        - normalize.css 
+            -> responsável por resetar estilos do navegador
+        - reset.css
+            -> padrões de estilo resetados que vão para todas as folhas css deste projeto
+    . img
+        - arquivos de imagens
+        - arquivos referentes à ícones e fontes
+    . js
+        - arquivos de js
+
+## raiz
+- index.html
+- README.md
+
+# ordem para começar a codar um layout
+- de cima para baixo
+- primeiro faz o cabeçalho
+
+# organização de arquivos css 
+- não é bom deixar o código muito acoplado e amarrado ao html
+- usar classes em vez de tags
+- ter um arquivo css para cada elemento / componente do projeto
+- se tem mais de um arquivo refente ao mesmo elemento pai, então pode criar uma posta
+
+# atomic design
+- organizar a esturutra do css de um projeto
+- 1 átomo = 1 tag html
+- ex: um elemento com nome "pesquisa" + barra de pesquisa + botão "pesquisar"
+- como seria: label -> 1 átomo; input -> 1 átomo; button -> 1 átomo 
+- juntando estes 3 átomos -> forma-se uma molécula -> que é 1 formulário de pesquisa
+- molécula = junção de vários átomos
+- organismos = junção de várias moléculas
+- ex: form de pesquisa -> 1 molécula; menu do cabeçalho com itens -> 1 molécula
+- juntos formam um organismo que é o cabeçalho
+- templates = junção de vários organismos 
+- páginas = junção de vários templates
+- diferença entre templates (placeholders) e páginas (imagens e textos reais finais)
+- se este componente tem mais de 1 arquivo, criar uma pasta
+
+# bem
+- metodologia para nomear classes css
+- block element modifier
+- bloco = pequeno contexto, pequeno pedaço (ex: menu) [bloco]
+- elemento = filho de um bloco (ex: lista do menu) [bloco__elemento]
+- modificador = [bloco--modificador ou bloco__elemento--modificador]
+- não precisa colocar o nome dos arquivos .css na metodologia bem
+- modificador: vários elementos de mesma classe porém com particularidades específicas cada um
+
+# boas práticas
+- estilos por ordem alfabética dentro das chaves
+- a imagem só deve estar no html se for relevante para seo 
+- caso seja estilização, colocar no css (ex: banner, foto de pessoa)
+- background de imagem no css tem shortcut, colocar todos na mesma linha em vez de repetir!
+
+# responsividade
+- começar pelo mobile
+- embaixo de cada arquivo css, colocar o media queria tudo o que muda com telas diferentes
+- em cima, fora do media querie, é o que não muda 
+
+# dicas de css
+
+## position
+- pai: relative
+- filho: absolute + top/bottom/left/right em %
+- isso é feito quando o elemento filho deve ficar por cima flutuando
+- também dá pra usar o transform: translate (x,y em %) além dos outros acima
+
+## flex
+- displya: flex no pai quando seus elementos devem ficar responsivos
+- flew-wrap: quando seus elementos devem ficar um embaixo do outro ao diminuir a templates
+- elemento filho -> display: flex para se comportar assim também
+- flex-direction: colunmn no filho quando estes elementos devem ficar em colunas um sobre o outro
+
+## calc
+- exemplo: width: calc(25% -5rem) -> 5rem de uma margim de que já existe
+- estou retirando esse excesso usando o calc
+
